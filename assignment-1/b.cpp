@@ -29,9 +29,11 @@ void read_temperatures(double temperatures[], int len) {
     double temp;
     int i = 0;
     while (file >> temp) {
-        if (i >= len) return;
+        if (i >= len) continue;
 
         temperatures[i] = temp;
         i++;
     }
+
+    file.close();
 }
