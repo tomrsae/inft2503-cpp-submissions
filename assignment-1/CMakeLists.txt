@@ -5,4 +5,4 @@ project(assignment-1)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")
 
 add_executable(assignment-1-a a.cpp)
-#add_executable(assignment-1-b b.cpp)
+add_executable(assignment-1-b b.cpp)
