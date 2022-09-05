@@ -1,0 +1,10 @@
+char *line = nullptr;   // eller char *line = 0;
+strcpy(line, "Dette er en tekst");
+
+First a character pointer is created, pointing to the null pointer (or address 0x0)
+Then, there is a an attempted call to strcpy. If done correctly, this would make the
+"line" pointer point to the supplied string.
+However, "line" does not point to a valid memory location, nor does it have sufficient
+space for the supplied string.
+
+Therefore, the above code would result in an invalid memory access operation and crash.

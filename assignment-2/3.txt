@@ -1,0 +1,28 @@
+char text[5];
+char *pointer = text;
+char search_for = 'e';
+cin >> text;
+while (*pointer != search_for) {
+  *pointer = search_for;
+  pointer++;
+}
+
+First a character sequence is declared, resulting in a character array capable of storing 5 elements.
+Then, a pointer is declared, pointing to the previously allocated character sequence.
+Because an array is inherently a pointer, the variables "text" and "pointer" are equivalent.
+
+A variable "search_for" is then declared and initialized to be the character "e".
+
+An input operation in the form of "cin" is then performed, attempting to read from (presumably) stdin.
+However, this may be subject to problems.
+If the input contains more than 4 characters, this operation will result in a buffer overflow and a program crash
+(as there has to be sufficient space for the null-terminating character as well).
+
+A loop is then started to look for the character in "search_for".
+If the character currently pointed to by "pointer" does not equal "e", that character is overwritten with the value
+of "search_for" and the pointer is incremented.
+Whether or not the overwriting is a problem depends on the desired semantics.
+
+This is subject to another issue. As there is no check for whether or not we have reached the end of the "text" string,
+this may result in an illegal memory access where we try reading the value at whatever address supercedes the last element
+in "text".
