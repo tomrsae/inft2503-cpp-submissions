@@ -1,6 +1,6 @@
 #include <iostream>
 
-int find_sum(const int*, int);
+int find_sum(const int *table, int length);
 
 int main() {
     const int TABLE_SIZE = 20;
