@@ -8,9 +8,9 @@ public:
     Set(const Set&);
     Set(std::vector<int>);
     Set(std::initializer_list<int>);
-    Set U(const Set&) const;
-    void add(const int);
 
+    Set operator+(const Set&) const;
+    Set& operator+=(int);
     friend std::ostream &operator<<(std::ostream&, const Set&);
 
 private:
